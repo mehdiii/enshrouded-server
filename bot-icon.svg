@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="65%">
+      <stop offset="0" stop-color="#3a2a4f"/>
+      <stop offset="0.55" stop-color="#1a1426"/>
+      <stop offset="1" stop-color="#0a0810"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffb347" stop-opacity="0.75"/>
+      <stop offset="0.4" stop-color="#ff7a1a" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#ff7a1a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="flameOuter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#ff5a12"/>
+      <stop offset="0.6" stop-color="#ff9a2e"/>
+      <stop offset="1" stop-color="#ffd36b"/>
+    </linearGradient>
+    <linearGradient id="flameInner" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#fff3c4"/>
+      <stop offset="1" stop-color="#ffcf5a"/>
+    </linearGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6b6378"/>
+      <stop offset="1" stop-color="#2c2735"/>
+    </linearGradient>
+    <linearGradient id="fog" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8a4fd8" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#7b3fc4" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#4b1f86" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="2"/></filter>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bg)"/>
+
+  <!-- halo de la Flamme -->
+  <circle cx="256" cy="230" r="190" fill="url(#glow)"/>
+
+  <!-- runes en cercle -->
+  <circle cx="256" cy="245" r="168" fill="none" stroke="#ffb347" stroke-opacity="0.35" stroke-width="3" stroke-dasharray="4 14 22 14"/>
+  <circle cx="256" cy="245" r="150" fill="none" stroke="#ffb347" stroke-opacity="0.15" stroke-width="2"/>
+
+  <!-- flamme -->
+  <g filter="url(#soft)">
+    <path d="M256 70
+             C 290 130, 345 160, 340 245
+             C 336 300, 300 330, 256 332
+             C 212 330, 176 300, 172 245
+             C 168 195, 200 175, 214 135
+             C 226 170, 236 180, 246 178
+             C 236 140, 240 105, 256 70 Z"
+          fill="url(#flameOuter)"/>
+    <path d="M258 165
+             C 280 200, 305 220, 300 262
+             C 296 296, 278 312, 256 312
+             C 234 312, 214 296, 212 266
+             C 210 238, 228 222, 236 200
+             C 244 220, 252 222, 258 218
+             C 252 200, 250 185, 258 165 Z"
+          fill="url(#flameInner)"/>
+  </g>
+
+  <!-- braises -->
+  <g fill="#ffcf5a">
+    <circle cx="190" cy="140" r="4" opacity="0.9"/>
+    <circle cx="330" cy="120" r="3" opacity="0.8"/>
+    <circle cx="352" cy="190" r="5" opacity="0.7"/>
+    <circle cx="165" cy="215" r="3" opacity="0.7"/>
+    <circle cx="300" cy="85" r="2.5" opacity="0.9"/>
+    <circle cx="215" cy="95" r="2" opacity="0.8"/>
+  </g>
+
+  <!-- autel de pierre -->
+  <path d="M168 330 L344 330 L330 360 L182 360 Z" fill="url(#stone)"/>
+  <path d="M196 360 L316 360 L306 420 L206 420 Z" fill="url(#stone)"/>
+  <path d="M176 420 L336 420 L346 446 L166 446 Z" fill="url(#stone)"/>
+  <path d="M168 330 L344 330" stroke="#ffb347" stroke-opacity="0.8" stroke-width="3"/>
+  <path d="M236 378 L256 366 L276 378 L256 404 Z" fill="none" stroke="#ffb347" stroke-opacity="0.7" stroke-width="3"/>
+
+  <!-- le Voile (brume) -->
+  <g filter="url(#blur)">
+    <path d="M0 400 C 80 370, 140 420, 220 400 S 380 370, 512 405 L512 512 L0 512 Z" fill="url(#fog)"/>
+    <path d="M0 450 C 100 425, 170 470, 270 445 S 430 430, 512 455 L512 512 L0 512 Z" fill="#5a2a9e" opacity="0.7"/>
+  </g>
+</svg>

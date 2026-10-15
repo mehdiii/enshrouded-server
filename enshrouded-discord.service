@@ -1,0 +1,14 @@
+[Unit]
+Description=Notifications Discord du serveur Enshrouded
+After=docker.service
+Requires=docker.service
+
+[Service]
+User=ubuntu
+Group=docker
+ExecStart=/usr/bin/python3 -u /home/ubuntu/enshrouded-server/discord-notifier.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

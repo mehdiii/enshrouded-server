@@ -1,0 +1,10 @@
+# Secrets
+.env
+
+# Données du serveur (binaires, monde, logs) : plusieurs Go
+game/
+
+# Archives de sauvegarde du monde
+sauvegardes-manuelles/
+*.tar.gz
+*.zip
